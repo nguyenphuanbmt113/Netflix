@@ -36,9 +36,9 @@ export const Navbar = () => {
         </h1>
       </Link>
       <div className="flex items-center gap-5">
-        <div className="text-black font-medium">
+        {/* <div className="text-black font-medium">
           <NavLink to="/movieslist">Movies List</NavLink>
-        </div>
+        </div> */}
         <div className="text-black font-medium">
           <NavLink to="/tvshow">TV Shows</NavLink>
         </div>

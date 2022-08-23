@@ -7,12 +7,11 @@ import "./index.scss";
 import { CollectionContextProvider } from "./context/CollectionContext";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <CollectionContextProvider>
-        <App />
-      </CollectionContextProvider>
-    </BrowserRouter>
-  </React.StrictMode>,
+  <BrowserRouter>
+    <CollectionContextProvider>
+      <App />
+    </CollectionContextProvider>
+  </BrowserRouter>,
+
   document.getElementById("root")
 );
