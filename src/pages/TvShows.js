@@ -14,9 +14,11 @@ export const TvShows = () => {
       let url = `https://api.themoviedb.org/3/tv/popular?api_key=89c2f4cad3722f5e0fd78a89c8d7a6e8&language=en-US&limit=${limit}&page=${nextPage}`;
       const fetching = async () => {
         const res = await axios.get(url);
-        if (here === false) return null;
         const data = res?.data.results;
-        setMovie((p) => [...p, ...data]);
+        if (here === false) return null;
+        if (here) {
+          setMovie((p) => [...p, ...data]);
+        }
         setLoading(true);
       };
       fetching();

@@ -26,7 +26,9 @@ export const Genres = () => {
         setTotalResult(res?.data?.total_results);
         const data = res?.data.results;
         if (here === false) return null;
-        setMovie(data);
+        if (here) {
+          setMovie(data);
+        }
       };
       fetching();
     } catch (error) {

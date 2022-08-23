@@ -24,9 +24,11 @@ export const Search = () => {
       const fetching = async () => {
         const res = await axios.get(url.concat(changeUrl));
         setTotalResult(res?.data?.total_results);
-        if (here === false) return null;
         const data = res?.data.results;
-        setMovie(data);
+        if (here === false) return null;
+        if (here) {
+          setMovie(data);
+        }
       };
       fetching();
     } catch (err) {

@@ -14,24 +14,26 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
-    <div className="">
-      <Header></Header>
-      <Routes>
-        <Route path="/" element={<Home></Home>}></Route>
-        <Route path="/tvshow" element={<TvShows></TvShows>}></Route>
-        <Route
-          path="/collections"
-          element={<Collections></Collections>}></Route>
-        <Route
-          path="/movieslist"
-          element={<MoviesListPage></MoviesListPage>}></Route>
-        <Route
-          path="/movie/:id"
-          element={<DetailMovies></DetailMovies>}></Route>
-        <Route path="/search/:query" element={<Search></Search>}></Route>
-        <Route path="/genre/:genre" element={<Genres></Genres>}></Route>
-      </Routes>
-      <Footer></Footer>
+    <>
+      <div className="">
+        <Header></Header>
+        <Routes>
+          <Route path="/" element={<Home></Home>}></Route>
+          <Route path="/tvshow" element={<TvShows></TvShows>}></Route>
+          <Route
+            path="/collections"
+            element={<Collections></Collections>}></Route>
+          <Route
+            path="/movieslist"
+            element={<MoviesListPage></MoviesListPage>}></Route>
+          <Route
+            path="/movie/:id"
+            element={<DetailMovies></DetailMovies>}></Route>
+          <Route path="/search/:query" element={<Search></Search>}></Route>
+          <Route path="/genre/:genre" element={<Genres></Genres>}></Route>
+        </Routes>
+        <Footer></Footer>
+      </div>
       <ToastContainer
         position="top-right"
         autoClose={2000}
@@ -43,7 +45,7 @@ function App() {
         draggable
       />
       <ToastContainer />
-    </div>
+    </>
   );
 }
 
