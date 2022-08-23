@@ -24,10 +24,8 @@ export const BannerItem = ({ movie }) => {
       <div className="content  absolute w-full top-[20%] p-4 md:p-8">
         <h1 className="text-3xl md:text-4xl font-bold">{movie.title}</h1>
         <div className="flex items-center gap-4 my-4">
-          <button className="border bg-gray-300 text-black px-5 py-2 border-gray-300">
-            Play
-          </button>
-          <button className="border  px-5 py-2 border-gray-300 hover:bg-red-500 transition-all">
+          <button className="bg-red-500 px-5 py-2 text-white">Play</button>
+          <button className="px-5 py-2 bg-blue-500 hover:bg-blue-400 transition-all">
             Watch Now
           </button>
         </div>

@@ -3,8 +3,11 @@ import axios from "axios";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { CardMovie } from "./CardMovie";
-export const MoviesList = ({ title = "upcoming" }) => {
+export const MoviesList = ({ title }) => {
   const [movies, setMovies] = useState([]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   useEffect(() => {
     try {
       const fetching = async () => {
@@ -19,42 +22,44 @@ export const MoviesList = ({ title = "upcoming" }) => {
     }
   }, [title]);
   return (
-    <div className="p-4 md:px-8">
-      <h2 className="text-black font-bold md:text-xl mb-4 dark:text-black capitalize">
-        {title}
-      </h2>
-      <Swiper
-        spaceBetween={10}
-        slidesPerView={5}
-        breakpoints={{
-          640: {
-            width: 640,
-            slidesPerView: 3,
-          },
-          768: {
-            width: 768,
-            slidesPerView: 3,
-          },
-          1024: {
-            width: 1024,
-            slidesPerView: 5,
-          },
-          1200: {
-            width: 1200,
-            slidesPerView: 5,
-          },
-          1280: {
-            width: 1280,
-            slidesPerView: 5,
-          },
-        }}>
-        {movies.length > 0 &&
-          movies.map((item) => (
-            <SwiperSlide key={item.id}>
-              <CardMovie item={item}></CardMovie>
-            </SwiperSlide>
-          ))}
-      </Swiper>
-    </div>
+    <>
+      <div className="p-4 md:px-8">
+        <h2 className="text-black font-bold md:text-xl mb-4 dark:text-black capitalize">
+          {title}
+        </h2>
+        <Swiper
+          spaceBetween={10}
+          slidesPerView={5}
+          breakpoints={{
+            640: {
+              width: 640,
+              slidesPerView: 3,
+            },
+            768: {
+              width: 768,
+              slidesPerView: 3,
+            },
+            1024: {
+              width: 1024,
+              slidesPerView: 5,
+            },
+            1200: {
+              width: 1200,
+              slidesPerView: 5,
+            },
+            1280: {
+              width: 1280,
+              slidesPerView: 5,
+            },
+          }}>
+          {movies.length > 0 &&
+            movies.map((item) => (
+              <SwiperSlide key={item.id}>
+                <CardMovie item={item}></CardMovie>
+              </SwiperSlide>
+            ))}
+        </Swiper>
+      </div>
+    </>
   );
 };

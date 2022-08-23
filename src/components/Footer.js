@@ -1,7 +1,9 @@
 import React from "react";
 import useSWR from "swr";
 import fetcher from "../config/fetcher";
+import { useNavigate } from "react-router-dom";
 export const Footer = () => {
+  const navigate = useNavigate();
   const { data } = useSWR(
     `https://api.themoviedb.org/3/genre/movie/list?api_key=89c2f4cad3722f5e0fd78a89c8d7a6e8&language=en-US`,
     fetcher
@@ -20,7 +22,10 @@ export const Footer = () => {
         {dataGenres &&
           dataGenres.length > 0 &&
           dataGenres.map((item) => (
-            <div key={item.id} className="text-white cursor-pointer">
+            <div
+              key={item.id}
+              className="text-white cursor-pointer"
+              onClick={() => navigate(`/genre/${item.id}`)}>
               {item.name}
             </div>
           ))}

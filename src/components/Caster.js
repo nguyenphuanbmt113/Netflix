@@ -9,7 +9,7 @@ export const Caster = ({ id }) => {
   const dataCast = data && data.cast;
   return (
     <div>
-      <h1 className="text-center font-bold text-3xl text-white dark:text-black">
+      <h1 className="text-center font-bold text-2xl text-black">
         Caster
       </h1>
       <div className="mb-10 flex items-center justify-center gap-7 p-4">
@@ -17,15 +17,15 @@ export const Caster = ({ id }) => {
           dataCast.length > 0 &&
           dataCast.slice(0, 5).map((item) => {
             return (
-              <div className="flex flex-col gap-3">
-                <div className="h-[200px]" key={item.id}>
+              <div className="flex flex-col gap-3" key={item.id}>
+                <div className="h-[200px]">
                   <img
                     src={`https://image.tmdb.org/t/p/original${item.profile_path}`}
                     alt=""
                     className="object-cover w-full h-full rounded-lg"
                   />
                 </div>
-                <div className="text-gray-400">{item.name}</div>
+                <div className="text-black">{item.name}</div>
               </div>
             );
           })}

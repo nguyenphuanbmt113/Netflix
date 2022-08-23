@@ -1,33 +1,34 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 export const CardMovie = ({ item }) => {
   const imgRef = useRef();
   const navigate = useNavigate();
-  // useEffect(() => {
-  //   const img = imgRef.current;
-  //   const observer = new IntersectionObserver((entries) => {
-  //     if (entries[0].isIntersecting) {
-  //       img.setAttribute(
-  //         "src",
-  //         `https://image.tmdb.org/t/p/original${item.backdrop_path}`
-  //       );
-  //     }
-  //   });
-  //   if (img) {
-  //     observer.observe(img);
-  //   }
-  //   return () => {
-  //     observer.unobserve(img);
-  //   };
-  // }, [item.backdrop_path]);
+  useEffect(() => {
+    const img = imgRef.current;
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        img.setAttribute(
+          "src",
+          `https://image.tmdb.org/t/p/original${item.backdrop_path}`
+        );
+      }
+    });
+
+    if (img) {
+      observer.observe(img);
+    }
+    return () => {
+      observer.unobserve(img);
+    };
+  }, [item.backdrop_path]);
   return (
     <div
-      className="relative w-full h-full cursor-pointer group"
+      className="relative w-full h-full cursor-pointer group hover:transition-all"
       onClick={() => navigate(`/movie/${item.id}`)}>
-      <div className="w-full h-auto cursor-pointer relative">
+      <div className="w-full h-auto cursor-pointer relative hover:shadow-lg hover:scale-110 transition-all z-20">
         <img
           ref={imgRef}
-          src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`}
+          // src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`}
           alt={item?.backdrop_path}
           className="w-full h-full object-cover rounded-md"
         />
@@ -65,7 +66,9 @@ export const CardMovie = ({ item }) => {
           </div>
         </div>
       </div>
-      <p className="text-black mt-2 dark:text-black">{item.title}</p>
+      <p className="text-black mt-2 hover:text-red-500">
+        {item.title || item.name}{" "}
+      </p>
     </div>
   );
 };
