@@ -2,15 +2,15 @@
 Xây dựng Website cho phép người dùng xem phim
 
 ### Features
-Chức năng phân trang
-Loading Page
-React Routing
-lazy loading, animation scroll
-Validation form với react-hook-form
-Cho phép tìm kiếm phim theo tên 
-Lọc và tìm kiếm phim theo năm, theo thể loại phim
-Lưu thông tin phim yêu thích
-Reponsive với tailwind
++ Chức năng phân trang
++ Loading Page
++ React Routing
++ lazy loading, animation scroll
++ Validation form với react-hook-form
++ Cho phép tìm kiếm phim theo tên 
++ Lọc và tìm kiếm phim theo năm, theo thể loại phim
++ Lưu thông tin phim yêu thích
++ Reponsive với tailwind
 
 
 ![v1 1](https://user-images.githubusercontent.com/106683648/205278675-b56d2bd5-47ad-4c51-9f86-812ad79241cb.jpg)
